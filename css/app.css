@@ -396,6 +396,12 @@ button.guide-card.is-selected {
 
 .shot svg { width: 132px; height: 84px; }
 
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .shot .mark {
   position: absolute;
   right: 8px;

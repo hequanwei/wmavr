@@ -1,0 +1,224 @@
+{
+  "quest3": {
+    "src": "/img/hw/quest3.jpg",
+    "author": "Roy.wonder.cohen",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_front_View.jpg"
+  },
+  "quest3s": {
+    "src": "/img/hw/quest3s.jpg",
+    "author": "WiiBoi",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3S_Display_Unit.jpg"
+  },
+  "pico4ultra": {
+    "src": "/img/hw/pico4ultra.jpg",
+    "author": "Kachi-lan",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Pico_4_ultra_headset.jpg"
+  },
+  "steam-frame": {
+    "src": "/img/hw/steam-frame.jpg",
+    "author": "Davepape",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Steam_Frame_front_3.jpg"
+  },
+  "vision-pro": {
+    "src": "/img/hw/vision-pro.jpg",
+    "author": "Seasider53",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Apple_Vision_Pro_on_display.jpg"
+  },
+  "galaxy-xr": {
+    "src": "/img/hw/galaxy-xr.jpg",
+    "author": "SsSeanChoi",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Samsung-Mobile-XR-Project-Moohan-Android-XR-platform-Google_main1.jpg"
+  },
+  "quest2": {
+    "src": "/img/hw/quest2.jpg",
+    "author": "KKPCW",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Oculus_Quest_2_-_1.jpg"
+  },
+  "cardboard": {
+    "src": "/img/hw/cardboard.jpg",
+    "author": "Evan-Amos",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Google-Cardboard.jpg"
+  },
+  "psvr2": {
+    "src": "/img/hw/psvr2.jpg",
+    "author": "ArlindoPereira",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:PlayStation_VR2.jpg"
+  },
+  "psvr1": {
+    "src": "/img/hw/psvr1.jpg",
+    "author": "Evan-Amos",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Sony-PlayStation-4-PSVR-Headset-Mk1-FL.jpg"
+  },
+  "gear-vr": {
+    "src": "/img/hw/gear-vr.jpg",
+    "author": "https://www.flickr.com/people/pestoverde/",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Samsung_Gear_VR.jpg"
+  },
+  "rift-s": {
+    "src": "/img/hw/rift-s.jpg",
+    "author": "Pipp345",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Oculus_Rift_S.jpg"
+  },
+  "rift-cv1": {
+    "src": "/img/hw/rift-cv1.jpg",
+    "author": "Evan-Amos",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Oculus-Rift-CV1-Headset-Front.jpg"
+  },
+  "vive": {
+    "src": "/img/hw/vive.jpg",
+    "author": "CULLEN STEBER",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:HTC_Vive_Headset_Front_View.jpg"
+  },
+  "daydream": {
+    "src": "/img/hw/daydream.jpg",
+    "author": "Shaded0",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Google_Daydream_View_(VR).jpg"
+  },
+  "oculus-go": {
+    "src": "/img/hw/oculus-go.jpg",
+    "author": "Syced",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Oculus_Go_-_4.jpg"
+  },
+  "rayban-meta": {
+    "src": "/img/hw/rayban-meta.jpg",
+    "author": "CCadio",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ray-Ban_Meta_Gen_1_smart_glasses_with_charging_case.jpg"
+  },
+  "index": {
+    "src": "/img/hw/index.jpg",
+    "author": "Airman 1st Class Robyn Hunsinger",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Air_Force_officer_using_Valve_Index.jpg"
+  },
+  "rtx-4090": {
+    "src": "/img/hw/rtx-4090.jpg",
+    "author": "Benlisquare",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Asus_Strix_RTX_4090.jpg"
+  },
+  "rtx-4070": {
+    "src": "/img/hw/rtx-4070.jpg",
+    "author": "Jacek Halicki",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:2023_Gigabyte_GeForce_RTX_4070_Aero_OC_12GB_(2).jpg"
+  },
+  "rtx-3090": {
+    "src": "/img/hw/rtx-3090.jpg",
+    "author": "PantheraLeo1359531",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Gigabyte_GeForce_RTX_3090_Eagle_OC_24G,_24576_MiB_GDDR6X_Front_20201114_DSC5880.jpg"
+  },
+  "rtx-3060": {
+    "src": "/img/hw/rtx-3060.jpg",
+    "author": "Qurren",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Zotac_GeForce_RTX_3060_12GB_VRAM_LHR_video_card.jpg"
+  },
+  "rtx-2080": {
+    "src": "/img/hw/rtx-2080.jpg",
+    "author": "Jacek Halicki",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:2023_MSI_GeForce_RTX_2080_Gaming_X_Trio_(1).jpg"
+  },
+  "gtx-1080ti": {
+    "src": "/img/hw/gtx-1080ti.jpg",
+    "author": "Manifest Interactive from Portland, OR, USA",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Nvidia_GeForce_GTX_1080_Ti_Founders_Edition_unpacking_(27347713181).jpg"
+  },
+  "rx-7900xtx": {
+    "src": "/img/hw/rx-7900xtx.jpg",
+    "author": "Geni",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sapphire_AMD_Radeon_RX_7900_XTX.jpg"
+  },
+  "rtx-5070ti": {
+    "src": "/img/hw/rtx-5070ti.jpg",
+    "author": "4300streetcar",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:PNY_RTX_5070_Ti_at_Computex_2025.jpg"
+  },
+  "rtx-5060ti": {
+    "src": "/img/hw/rtx-5060ti.jpg",
+    "author": "FreeMediaKid!",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Nvidia_GeForce_RTX_5060_Ti_16GB,_PNY_Overclocked_Dual_Fan,_rear.jpg"
+  },
+  "rtx-4070tis": {
+    "src": "/img/hw/rtx-4070tis.png",
+    "author": "极客湾Geekerwan",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:RTX_4070_Ti_SUPER_im_Vergleich_mit_anderen_RTX_40er-Karten_(%E6%9E%81%E5%AE%A2%E6%B9%BEGeekerwan)_004.png"
+  },
+  "rtx-2080s": {
+    "src": "/img/hw/rtx-2080s.jpg",
+    "author": "HiyoriX",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:GeForce_RTX_2080_Super_Gigabyte_Variant_Back.jpg"
+  },
+  "rtx-2070s": {
+    "src": "/img/hw/rtx-2070s.jpg",
+    "author": "KMBDENNISTRIDENT",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Colorful_Nvidia_GeForce_RTX_2070_Super_in_Started_computer_case.jpg"
+  },
+  "rtx-2070": {
+    "src": "/img/hw/rtx-2070.jpg",
+    "author": "Michael Wolf (Webseite)",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:ASUS_GeForce_RTX_2070_ROG_STRIX_Advanced_-_8GB_GDDR6_1632.jpg"
+  },
+  "rtx-2060": {
+    "src": "/img/hw/rtx-2060.jpg",
+    "author": "ITEagle Europe - Sebastiaan Broekhoven",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Gigabyte_RTX_2060_OC_6G_GV-N2060OC-6GD_rev._2.0_-_side_view.jpg"
+  },
+  "gtx-1660": {
+    "src": "/img/hw/gtx-1660.jpg",
+    "author": "ASUS TUF Gaming X3 20190601.jpg: Solomon203 derivative work dated 7 April 2024: Pittigrilli",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:ASUS_TUF_Gaming_X3_Geforce_GTX_1660_(cropped,_edited).jpg"
+  },
+  "gtx-1080": {
+    "src": "/img/hw/gtx-1080.jpg",
+    "author": "Blake Patterson",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Intel_Core_i7-6700K,_GTX_1080_PC.jpg"
+  },
+  "gtx-1070ti": {
+    "src": "/img/hw/gtx-1070ti.jpg",
+    "author": "Tiia Monto",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:ASUS_GTX_1070_Ti.jpg"
+  },
+  "gtx-1070": {
+    "src": "/img/hw/gtx-1070.jpg",
+    "author": "Porsche613",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:EVGA_GTX_1070_SC_IMG_20180812_163644.jpg"
+  },
+  "gtx-1060": {
+    "src": "/img/hw/gtx-1060.jpg",
+    "author": "ITEagle Europe - Sebastiaan Broekhoven",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:ASUS_Dual_GeForce_GTX_1060_3GB_OC_Edition_-_rear_view.jpg"
+  }
+}

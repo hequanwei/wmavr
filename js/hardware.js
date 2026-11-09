@@ -11,12 +11,18 @@
   var openRig = document.querySelector("#open-rig");
   var dataSet = null;
   var deviceSet = { groups: [], devices: [] };
+  var imageSet = {};
   var pickedDeviceId = "";
 
-  Promise.all([loadJson("../data/rig.json"), loadJson("../data/devices.json")])
+  Promise.all([
+    loadJson("../data/rig.json"),
+    loadJson("../data/devices.json"),
+    loadJson("../data/images.json").catch(function () { return {}; })
+  ])
     .then(function (pair) {
       dataSet = pair[0];
       deviceSet = pair[1];
+      imageSet = pair[2] || {};
       window.WmavrCatalog.fillGpuSelect(gpuSelect, dataSet.gpus);
       fill(headsetSelect, dataSet.headsets, "name");
       fill(networkSelect, dataSet.networks, "label");
@@ -29,6 +35,7 @@
       document.querySelector("#check").addEventListener("change", onChange);
       openRig.addEventListener("click", save);
       renderGuide(dataSet, deviceSet);
+      renderCredits(dataSet, deviceSet);
       paint();
     })
     .catch(function () {
@@ -167,10 +174,19 @@
     return '<svg viewBox="0 0 160 100" aria-hidden="true"><path d="M30 52h-12M142 52h12" stroke="#2c3038" stroke-width="6" stroke-linecap="round"/><rect x="34" y="34" width="92" height="32" rx="12" fill="#2c3038"/><rect x="46" y="42" width="28" height="14" rx="5" fill="#12141a"/><rect x="86" y="42" width="28" height="14" rx="5" fill="#12141a"/><circle cx="58" cy="30" r="2" fill="#9aa3ad"/><circle cx="80" cy="28" r="2" fill="#9aa3ad"/><circle cx="102" cy="30" r="2" fill="#9aa3ad"/></svg>';
   }
 
-  function shot(svg) {
+  function shot(svg, id, alt) {
     var span = document.createElement("span");
     span.className = "shot";
-    span.innerHTML = svg;
+    var src = imageSet[id] && imageSet[id].src;
+    if (!src) {
+      span.innerHTML = svg;
+      return span;
+    }
+    var img = document.createElement("img");
+    img.src = src;
+    img.alt = alt || "";
+    img.addEventListener("error", function () { span.innerHTML = svg; });
+    span.appendChild(img);
     return span;
   }
 
@@ -289,7 +305,7 @@
     line.className = "fine";
     line.textContent = note;
     button.appendChild(badgeClass ? statusPill(badgeClass, badge) : pill(ok, badge));
-    button.appendChild(shot(svg));
+    button.appendChild(shot(svg, id, name));
     button.appendChild(title);
     button.appendChild(line);
     return button;
@@ -365,6 +381,29 @@
       return '<svg viewBox="0 0 160 100" aria-hidden="true"><rect x="42" y="30" width="76" height="28" rx="10" fill="#2c3038"/><rect x="54" y="38" width="20" height="12" rx="4" fill="#12141a"/><rect x="86" y="38" width="20" height="12" rx="4" fill="#12141a"/><rect x="58" y="68" width="44" height="10" rx="4" fill="#3a3e46"/></svg>';
     }
     return '<svg viewBox="0 0 160 100" aria-hidden="true"><rect x="36" y="34" width="88" height="32" rx="12" fill="#2c3038"/><rect x="48" y="42" width="26" height="14" rx="5" fill="#12141a"/><rect x="86" y="42" width="26" height="14" rx="5" fill="#12141a"/><circle cx="80" cy="28" r="2" fill="#9aa3ad"/></svg>';
+  }
+
+  function renderCredits(data, devices) {
+    var list = document.querySelector("#photo-credits");
+    if (!list) return;
+    var names = {};
+    data.headsets.forEach(function (item) { names[item.id] = item.name; });
+    data.gpus.forEach(function (item) {
+      names[item.id] = item.name.replace("NVIDIA GeForce ", "").replace("AMD Radeon ", "");
+    });
+    devices.devices.forEach(function (item) { names[item.id] = item.name; });
+    Object.keys(imageSet).forEach(function (id) {
+      var image = imageSet[id];
+      var item = document.createElement("li");
+      var link = document.createElement("a");
+      link.href = image.page;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = names[id] || id;
+      item.appendChild(link);
+      item.appendChild(document.createTextNode(" · " + image.author + " · " + image.license));
+      list.appendChild(item);
+    });
   }
 
   function setGuideFilter(id) {
