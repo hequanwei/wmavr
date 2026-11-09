@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 160">
+  <title>wmavr</title>
+  <g fill="none" stroke="#f3f1e6" stroke-width="22" stroke-linecap="square" stroke-linejoin="miter">
+    <polyline points="16,22 70,136 124,22 178,136 232,22"/>
+    <path d="M286 136V62c0-26 48-26 48 10v64"/>
+    <path d="M334 84V62c0-26 48-26 48 10v64"/>
+    <circle cx="520" cy="90" r="40"/>
+    <path d="M560 46v90"/>
+    <polyline points="620,22 674,136 728,22"/>
+    <path d="M786 136V44"/>
+    <path d="M786 62h26c18 0 26 12 26 26"/>
+  </g>
+  <path d="M480 90h80" stroke="#d6ff4a" stroke-width="16" stroke-linecap="square"/>
+</svg>

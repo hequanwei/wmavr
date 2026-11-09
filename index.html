@@ -13,7 +13,7 @@
   <div class="wrap">
     <header class="site-header">
       <div class="brand">
-        <a href="/">wmavr</a>
+        <a class="logo-link" href="/" aria-label="wmavr"><img src="/img/wordmark.svg" alt=""></a>
         <nav class="nav" aria-label="栏目">
           <a href="/" aria-current="page">首页</a>
           <a href="/rig/">串流诊断</a>
@@ -21,8 +21,13 @@
           <a href="/directory/">目录</a>
         </nav>
       </div>
-      <h1>wmavr</h1>
-      <p class="lede">看这套显卡和头显怎么串，也可以按用途找工具。</p>
+      <div class="hero">
+        <h1>
+          <img src="/img/wordmark.svg" alt="wmavr">
+          <span class="expand">What Makes A VR</span>
+        </h1>
+        <p class="lede">看这套显卡和头显怎么串，也可以按用途找工具。字母展开就是这件事：一台 VR 要怎么才算能用。</p>
+      </div>
     </header>
     <div class="cards">
       <a class="card" href="/rig/">
@@ -46,6 +51,44 @@
         <span>诊断用的整张数字表和出处。</span>
       </a>
     </div>
+    <section class="sheet-block">
+      <h2>图文</h2>
+      <div class="stories">
+        <a class="story feature" href="/rig/">
+          <img src="/img/hw/quest3.jpg" alt="">
+          <div>
+            <p class="kicker">串流</p>
+            <strong>这套配置卡在哪</strong>
+            <span>选显卡、头显、Wi-Fi 和场景。页面按公开上限给出编码和码率，不预测某一款游戏的帧率。</span>
+          </div>
+        </a>
+        <a class="story" href="/hardware/">
+          <img src="/img/hw/cardboard.jpg" alt="">
+          <div>
+            <p class="kicker">硬件</p>
+            <strong>纸盒也收进来了</strong>
+            <span>Google Cardboard 这类手机盒子在硬件页里。画面是手机画的，不进码率计算。</span>
+          </div>
+        </a>
+        <a class="story" href="/hardware/">
+          <img src="/img/hw/steam-frame.jpg" alt="">
+          <div>
+            <p class="kicker">硬件</p>
+            <strong>新头显只写接法</strong>
+            <span>Steam Frame、Vision Pro 这些没有引用过的码率，卡片只说明画面从哪来。</span>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section class="sheet-block">
+      <h2>最近改了什么</h2>
+      <ul class="updates">
+        <li><time datetime="2026-11-09">2026-11-09</time>首页换上 wmavr 字标，下面用站内的图文，不转载外面的新闻。</li>
+        <li><time datetime="2026-11-09">2026-11-09</time>硬件卡片换成对得上型号的实拍。对不上的仍用示意图，出处在硬件页底部。</li>
+        <li><time datetime="2026-11-09">2026-11-09</time>头显按接法分开：能算码率的四台、一体机、电脑头显、主机头显和手机盒子。</li>
+        <li><time datetime="2026-11-09">2026-11-09</time>工具目录收录 26 个工具，按串流、WebXR、空间视频、可视化和资产筛选。</li>
+      </ul>
+    </section>
     <p class="fine">按 90Hz 和头显默认分辨率估算。码率来自 Virtual Desktop 的公开上限，网络按经验值。不测当前网速，也不预测某一款游戏的帧率。</p>
   </div>
 </body>
