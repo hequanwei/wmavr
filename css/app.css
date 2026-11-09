@@ -380,6 +380,8 @@ button.guide-card.is-selected {
 
 .pill.yes { background: #d6ff4a; color: #172000; }
 .pill.no { background: #ffb15a; color: #2a1600; }
+.pill.wait { background: #7ec8ff; color: #041820; }
+.pill.old { background: #3c4236; color: #f3f1e6; }
 
 .shot {
   position: relative;

@@ -1,0 +1,341 @@
+{
+  "updated": "2026-11-09",
+  "groups": [
+    {
+      "id": "standalone",
+      "name": "独立头显",
+      "blurb": "头显自己有芯片。有的能把电脑画面串过来，本站没有它们的码率上限。"
+    },
+    {
+      "id": "pcvr",
+      "name": "电脑头显",
+      "blurb": "画面从电脑用线送进来，不走无线串流那套码率。"
+    },
+    {
+      "id": "console",
+      "name": "主机头显",
+      "blurb": "先接游戏主机。"
+    },
+    {
+      "id": "phone",
+      "name": "手机盒子",
+      "blurb": "把手机放进去，画面是手机画的。"
+    },
+    {
+      "id": "retired",
+      "name": "停产但仍常见",
+      "blurb": "商店里已经没有新品，家里和二手市场还看得到。"
+    },
+    {
+      "id": "glasses",
+      "name": "观影眼镜",
+      "blurb": "眼前一块屏幕，不是封闭式头显。"
+    }
+  ],
+  "devices": [
+    {
+      "id": "steam-frame",
+      "name": "Valve Steam Frame",
+      "maker": "Valve",
+      "group": "standalone",
+      "status": "预约",
+      "summary": "SteamOS 头显，主要把电脑上的 Steam 画面串过来，自己也能跑一部分内容。码率未收录。"
+    },
+    {
+      "id": "galaxy-xr",
+      "name": "Samsung Galaxy XR",
+      "maker": "Samsung",
+      "group": "standalone",
+      "status": "在售",
+      "summary": "Android XR 一体机。不是 Quest 那套串流上限。"
+    },
+    {
+      "id": "vision-pro",
+      "name": "Apple Vision Pro",
+      "maker": "Apple",
+      "group": "standalone",
+      "status": "在售",
+      "summary": "当前在售的是 M5 款，跑 visionOS。不使用本站引用的 Virtual Desktop 码率。"
+    },
+    {
+      "id": "focus-vision",
+      "name": "HTC Vive Focus Vision",
+      "maker": "HTC",
+      "group": "standalone",
+      "status": "在售",
+      "summary": "一体机，也可以有线接电脑。码率未收录。"
+    },
+    {
+      "id": "xr-elite",
+      "name": "HTC Vive XR Elite",
+      "maker": "HTC",
+      "group": "standalone",
+      "status": "旧款",
+      "summary": "可改成眼镜形态的一体机，也能接电脑。码率未收录。"
+    },
+    {
+      "id": "focus-3",
+      "name": "HTC Vive Focus 3",
+      "maker": "HTC",
+      "group": "standalone",
+      "status": "旧款",
+      "summary": "企业向一体机，也能接电脑。码率未收录。"
+    },
+    {
+      "id": "pico4-pro",
+      "name": "PICO 4 Pro",
+      "maker": "PICO",
+      "group": "standalone",
+      "status": "旧款",
+      "summary": "带眼动的 PICO 4。不另写一套码率。"
+    },
+    {
+      "id": "pico-neo3",
+      "name": "PICO Neo 3",
+      "maker": "PICO",
+      "group": "standalone",
+      "status": "停售",
+      "summary": "上一代一体机，当年可以串 PC。码率未收录。"
+    },
+    {
+      "id": "quest2",
+      "name": "Meta Quest 2",
+      "maker": "Meta",
+      "group": "standalone",
+      "status": "停售",
+      "summary": "仍大量在用。Virtual Desktop 能连，本站没有单独的码率上限。"
+    },
+    {
+      "id": "quest-pro",
+      "name": "Meta Quest Pro",
+      "maker": "Meta",
+      "group": "standalone",
+      "status": "停售",
+      "summary": "带眼动和面部追踪的一体机。码率未收录。"
+    },
+    {
+      "id": "qiyu-3",
+      "name": "爱奇艺奇遇 3",
+      "maker": "爱奇艺",
+      "group": "standalone",
+      "status": "停售",
+      "summary": "国内观影向一体机。不进本站的码率计算。"
+    },
+    {
+      "id": "qiyu-dream-pro",
+      "name": "奇遇 Dream Pro",
+      "maker": "梦想绽放",
+      "group": "standalone",
+      "status": "旧款",
+      "summary": "国内一体机，宣传过无线 PC 串流。码率未收录。"
+    },
+    {
+      "id": "mi-standalone",
+      "name": "小米 VR 一体机",
+      "maker": "小米",
+      "group": "standalone",
+      "status": "停售",
+      "summary": "小米早期一体机，不是手机盒子，也不是现在的在售旗舰。"
+    },
+    {
+      "id": "beyond-2",
+      "name": "Bigscreen Beyond 2",
+      "maker": "Bigscreen",
+      "group": "pcvr",
+      "status": "在售",
+      "summary": "很轻的电脑头显。画面从电脑用线送进来。"
+    },
+    {
+      "id": "crystal-light",
+      "name": "Pimax Crystal Light",
+      "maker": "Pimax",
+      "group": "pcvr",
+      "status": "在售",
+      "summary": "宽视野电脑头显，给模拟器玩家用得比较多。"
+    },
+    {
+      "id": "crystal-super",
+      "name": "Pimax Crystal Super",
+      "maker": "Pimax",
+      "group": "pcvr",
+      "status": "在售",
+      "summary": "Crystal Light 上面的电脑头显，同样是有线接电脑。"
+    },
+    {
+      "id": "dream-air",
+      "name": "Pimax Dream Air",
+      "maker": "Pimax",
+      "group": "pcvr",
+      "status": "在售",
+      "summary": "更轻的电脑头显。不走无线串流码率。"
+    },
+    {
+      "id": "dream-air-se",
+      "name": "Pimax Dream Air SE",
+      "maker": "Pimax",
+      "group": "pcvr",
+      "status": "在售",
+      "summary": "Dream Air 的入门款，画面仍从电脑用线送来。"
+    },
+    {
+      "id": "index",
+      "name": "Valve Index",
+      "maker": "Valve",
+      "group": "pcvr",
+      "status": "停产清仓",
+      "summary": "灯塔定位的电脑头显。Valve 已停产，官网只剩部分替换零件。"
+    },
+    {
+      "id": "dpvr-e4",
+      "name": "大朋 E4",
+      "maker": "大朋",
+      "group": "pcvr",
+      "status": "旧款",
+      "summary": "有线电脑头显，国内体验店比较常见。"
+    },
+    {
+      "id": "vive-pro-2",
+      "name": "HTC Vive Pro 2",
+      "maker": "HTC",
+      "group": "pcvr",
+      "status": "停售",
+      "summary": "有线电脑头显，用基站定位。"
+    },
+    {
+      "id": "reverb-g2",
+      "name": "HP Reverb G2",
+      "maker": "HP",
+      "group": "pcvr",
+      "status": "停售",
+      "summary": "Windows MR 末期的电脑头显。微软已经结束这个平台。"
+    },
+    {
+      "id": "psvr2",
+      "name": "PlayStation VR2",
+      "maker": "索尼",
+      "group": "console",
+      "status": "部分地区在售",
+      "summary": "接 PS5。另有 PC 适配器可接电脑。2026 年 11 月美国官网已下架，欧洲仍有售。本站没有它的码率。"
+    },
+    {
+      "id": "psvr1",
+      "name": "PlayStation VR",
+      "maker": "索尼",
+      "group": "console",
+      "status": "停售",
+      "summary": "上一代，接 PS4。不能按 PC 串流来算。"
+    },
+    {
+      "id": "cardboard",
+      "name": "Google Cardboard",
+      "maker": "Google",
+      "group": "phone",
+      "status": "停售",
+      "summary": "纸盒或第三方仿品。Google 在 2021 年停售官方版，图纸是公开的。手机放进去，画面由手机绘制，不接电脑。"
+    },
+    {
+      "id": "daydream",
+      "name": "Google Daydream View",
+      "maker": "Google",
+      "group": "phone",
+      "status": "停售",
+      "summary": "2019 年停售。布面盒子加一个手柄，只支持当年认证过的手机，软件已不再维护。"
+    },
+    {
+      "id": "gear-vr",
+      "name": "Samsung Gear VR",
+      "maker": "三星",
+      "group": "phone",
+      "status": "停售",
+      "summary": "只插指定的三星手机。这个平台已经停了。"
+    },
+    {
+      "id": "mojing",
+      "name": "暴风魔镜",
+      "maker": "暴风",
+      "group": "phone",
+      "status": "停售",
+      "summary": "国内卖过很多代的手机盒子。画面来自手机，不接电脑。"
+    },
+    {
+      "id": "mi-phone",
+      "name": "小米 VR 眼镜",
+      "maker": "小米",
+      "group": "phone",
+      "status": "停售",
+      "summary": "小米的手机盒子，和后来的小米一体机不是同一类。"
+    },
+    {
+      "id": "rift-cv1",
+      "name": "Oculus Rift CV1",
+      "maker": "Meta",
+      "group": "retired",
+      "status": "停售",
+      "summary": "早期电脑头显，要用外置传感器。画面从电脑用线送来。"
+    },
+    {
+      "id": "rift-s",
+      "name": "Oculus Rift S",
+      "maker": "Meta",
+      "group": "retired",
+      "status": "停售",
+      "summary": "内向外定位的电脑头显，接 DisplayPort。"
+    },
+    {
+      "id": "vive",
+      "name": "HTC Vive",
+      "maker": "HTC",
+      "group": "retired",
+      "status": "停售",
+      "summary": "初代电脑头显，灯塔定位。"
+    },
+    {
+      "id": "oculus-go",
+      "name": "Oculus Go",
+      "maker": "Meta",
+      "group": "retired",
+      "status": "停售",
+      "summary": "只能转头的观影一体机，不能串 PC。"
+    },
+    {
+      "id": "odyssey",
+      "name": "Samsung Odyssey+",
+      "maker": "三星",
+      "group": "retired",
+      "status": "停售",
+      "summary": "Windows MR 头显。这个平台已经结束。"
+    },
+    {
+      "id": "xreal-one",
+      "name": "XREAL One",
+      "maker": "XREAL",
+      "group": "glasses",
+      "status": "在售",
+      "summary": "接手机或电脑的观影眼镜。眼前是一块虚拟屏幕，不是封闭式头显。"
+    },
+    {
+      "id": "rayneo-air3s",
+      "name": "雷鸟 Air 3s",
+      "maker": "雷鸟",
+      "group": "glasses",
+      "status": "在售",
+      "summary": "国内常见的观影眼镜，画面从手机或主机接过来。"
+    },
+    {
+      "id": "huawei-vr-glass",
+      "name": "华为 VR Glass",
+      "maker": "华为",
+      "group": "glasses",
+      "status": "停售",
+      "summary": "接手机的眼镜式显示器，不是一体机。"
+    },
+    {
+      "id": "rayban-meta",
+      "name": "Ray-Ban Meta",
+      "maker": "Meta",
+      "group": "glasses",
+      "status": "在售",
+      "summary": "带相机和音频的眼镜。镜片上没有沉浸式画面。"
+    }
+  ]
+}

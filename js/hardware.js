@@ -10,31 +10,37 @@
   var resultEl = document.querySelector("#result");
   var openRig = document.querySelector("#open-rig");
   var dataSet = null;
+  var deviceSet = { groups: [], devices: [] };
+  var pickedDeviceId = "";
 
-  fetch("../data/rig.json")
-    .then(function (response) {
-      if (!response.ok) throw new Error("status " + response.status);
-      return response.json();
-    })
-    .then(function (data) {
-      dataSet = data;
-      window.WmavrCatalog.fillGpuSelect(gpuSelect, data.gpus);
-      fill(headsetSelect, data.headsets, "name");
-      fill(networkSelect, data.networks, "label");
-      fill(sceneSelect, data.scenes, "label");
+  Promise.all([loadJson("../data/rig.json"), loadJson("../data/devices.json")])
+    .then(function (pair) {
+      dataSet = pair[0];
+      deviceSet = pair[1];
+      window.WmavrCatalog.fillGpuSelect(gpuSelect, dataSet.gpus);
+      fill(headsetSelect, dataSet.headsets, "name");
+      fill(networkSelect, dataSet.networks, "label");
+      fill(sceneSelect, dataSet.scenes, "label");
       restore();
       if (!gpuSelect.value) {
-        var reading = window.WmavrCatalog.matchGpu(data.gpus, window.WmavrCatalog.readRenderer());
+        var reading = window.WmavrCatalog.matchGpu(dataSet.gpus, window.WmavrCatalog.readRenderer());
         if (reading.kind === "match") gpuSelect.value = reading.gpu.id;
       }
       document.querySelector("#check").addEventListener("change", onChange);
       openRig.addEventListener("click", save);
-      renderGuide(data);
+      renderGuide(dataSet, deviceSet);
       paint();
     })
     .catch(function () {
       resultEl.innerHTML = "<h2>页面数据没加载出来</h2><p>请刷新后再试。</p>";
     });
+
+  function loadJson(url) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error("status " + response.status);
+      return response.json();
+    });
+  }
 
   function fill(select, list, labelKey) {
     list.forEach(function (item) {
@@ -80,6 +86,7 @@
   }
 
   function paint() {
+    pickedDeviceId = "";
     var input = inputNow();
     if (!input.gpuId) {
       resultEl.className = "result tone-incomplete";
@@ -107,8 +114,11 @@
     var cards = document.querySelectorAll("#guide .guide-card");
     for (var i = 0; i < cards.length; i += 1) {
       var card = cards[i];
-      var on = (card.getAttribute("data-kind") === "gpu" && card.getAttribute("data-id") === gpuSelect.value) ||
-        (card.getAttribute("data-kind") === "headset" && card.getAttribute("data-id") === headsetSelect.value);
+      var kind = card.getAttribute("data-kind");
+      var id = card.getAttribute("data-id");
+      var on = (kind === "gpu" && id === gpuSelect.value) ||
+        (kind === "headset" && !pickedDeviceId && id === headsetSelect.value) ||
+        (kind === "device" && id === pickedDeviceId);
       card.classList.toggle("is-selected", on);
       card.setAttribute("aria-pressed", on ? "true" : "false");
     }
@@ -171,12 +181,15 @@
     return badge;
   }
 
-  function renderGuide(data) {
+  function renderGuide(data, devices) {
     var filters = document.querySelector("#guide-filters");
     var guide = document.querySelector("#guide");
     var date = document.querySelector("#guide-date");
-    date.textContent = "资料日期 " + data.dataDate;
-    var sections = [{ id: "headset", name: "头显" }];
+    date.textContent = "码率资料 " + data.dataDate + " · 头显目录 " + devices.updated;
+    var sections = [{ id: "headset", name: "能算码率" }];
+    devices.groups.forEach(function (group) {
+      sections.push({ id: group.id, name: group.name, blurb: group.blurb, kind: "device" });
+    });
     var grouped = {};
     data.gpus.forEach(function (gpu) {
       var key = sectionKey(gpu.group);
@@ -208,7 +221,7 @@
     headsetSection.className = "guide-section";
     headsetSection.setAttribute("data-section", "headset");
     var headsetTitle = document.createElement("h2");
-    headsetTitle.textContent = "头显";
+    headsetTitle.textContent = "能算码率";
     var headsetGrid = document.createElement("div");
     headsetGrid.className = "guide-grid wide";
     data.headsets.forEach(function (headset) {
@@ -221,6 +234,10 @@
 
     sections.forEach(function (section) {
       if (section.id === "headset") return;
+      if (section.kind === "device") {
+        guide.appendChild(deviceSection(devices, section));
+        return;
+      }
       var block = document.createElement("section");
       block.className = "guide-section";
       block.setAttribute("data-section", section.id);
@@ -246,16 +263,20 @@
         node = node.parentNode;
       }
       if (!picked) return;
-      if (picked.getAttribute("data-kind") === "gpu") gpuSelect.value = picked.getAttribute("data-id");
-      if (picked.getAttribute("data-kind") === "headset") headsetSelect.value = picked.getAttribute("data-id");
-      save();
-      paint();
+      if (picked.getAttribute("data-kind") === "device") {
+        showDevice(picked.getAttribute("data-id"));
+      } else {
+        if (picked.getAttribute("data-kind") === "gpu") gpuSelect.value = picked.getAttribute("data-id");
+        if (picked.getAttribute("data-kind") === "headset") headsetSelect.value = picked.getAttribute("data-id");
+        save();
+        paint();
+      }
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       resultEl.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
     });
   }
 
-  function card(kind, id, name, badge, ok, note, svg) {
+  function card(kind, id, name, badge, ok, note, svg, badgeClass) {
     var button = document.createElement("button");
     button.type = "button";
     button.className = "guide-card";
@@ -267,11 +288,83 @@
     var line = document.createElement("p");
     line.className = "fine";
     line.textContent = note;
-    button.appendChild(pill(ok, badge));
+    button.appendChild(badgeClass ? statusPill(badgeClass, badge) : pill(ok, badge));
     button.appendChild(shot(svg));
     button.appendChild(title);
     button.appendChild(line);
     return button;
+  }
+
+  function statusPill(className, text) {
+    var badge = document.createElement("span");
+    badge.className = "pill " + className;
+    badge.textContent = text;
+    return badge;
+  }
+
+  function deviceSection(devices, section) {
+    var block = document.createElement("section");
+    block.className = "guide-section";
+    block.setAttribute("data-section", section.id);
+    var title = document.createElement("h2");
+    title.textContent = section.name;
+    var blurb = document.createElement("p");
+    blurb.className = "fine";
+    blurb.textContent = section.blurb;
+    var grid = document.createElement("div");
+    grid.className = "guide-grid wide";
+    devices.devices.forEach(function (device) {
+      if (device.group !== section.id) return;
+      grid.appendChild(card("device", device.id, device.name, device.status, false, device.summary, deviceSvg(device.group), statusClass(device.status)));
+    });
+    block.appendChild(title);
+    block.appendChild(blurb);
+    block.appendChild(grid);
+    return block;
+  }
+
+  function statusClass(status) {
+    if (status === "在售") return "yes";
+    if (status === "预约" || status === "部分地区在售") return "wait";
+    if (status === "旧款") return "old";
+    return "no";
+  }
+
+  function findDevice(id) {
+    for (var i = 0; i < deviceSet.devices.length; i += 1) {
+      if (deviceSet.devices[i].id === id) return deviceSet.devices[i];
+    }
+    return null;
+  }
+
+  function showDevice(id) {
+    var device = findDevice(id);
+    if (!device) return;
+    pickedDeviceId = id;
+    resultEl.className = "result tone-unknown";
+    resultEl.innerHTML = "<h2></h2><p></p><p class=\"fine\"></p>";
+    resultEl.querySelector("h2").textContent = device.name;
+    resultEl.querySelector("p").textContent = device.summary;
+    resultEl.querySelector(".fine").textContent = device.maker + " · " + device.status + "。这台不进码率计算。";
+    markSelected();
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    resultEl.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
+  }
+
+  function deviceSvg(group) {
+    if (group === "phone") {
+      return '<svg viewBox="0 0 160 100" aria-hidden="true"><path d="M34 28h92l10 14v34H24V42z" fill="#c4a574"/><rect x="62" y="40" width="36" height="28" rx="3" fill="#1c2430"/><path d="M24 42h112" stroke="#8c6a3a" stroke-width="2"/></svg>';
+    }
+    if (group === "glasses") {
+      return '<svg viewBox="0 0 160 100" aria-hidden="true"><rect x="28" y="38" width="42" height="26" rx="8" fill="none" stroke="#243044" stroke-width="4"/><rect x="90" y="38" width="42" height="26" rx="8" fill="none" stroke="#243044" stroke-width="4"/><path d="M70 50h20M28 46H16M144 46h-12" stroke="#7ec8ff" stroke-width="3" stroke-linecap="round"/></svg>';
+    }
+    if (group === "pcvr" || group === "retired") {
+      return '<svg viewBox="0 0 160 100" aria-hidden="true"><rect x="40" y="34" width="80" height="30" rx="10" fill="#2c3038"/><rect x="52" y="42" width="22" height="12" rx="4" fill="#12141a"/><rect x="86" y="42" width="22" height="12" rx="4" fill="#12141a"/><path d="M120 50h24" stroke="#d6ff4a" stroke-width="4" stroke-linecap="round"/></svg>';
+    }
+    if (group === "console") {
+      return '<svg viewBox="0 0 160 100" aria-hidden="true"><rect x="42" y="30" width="76" height="28" rx="10" fill="#2c3038"/><rect x="54" y="38" width="20" height="12" rx="4" fill="#12141a"/><rect x="86" y="38" width="20" height="12" rx="4" fill="#12141a"/><rect x="58" y="68" width="44" height="10" rx="4" fill="#3a3e46"/></svg>';
+    }
+    return '<svg viewBox="0 0 160 100" aria-hidden="true"><rect x="36" y="34" width="88" height="32" rx="12" fill="#2c3038"/><rect x="48" y="42" width="26" height="14" rx="5" fill="#12141a"/><rect x="86" y="42" width="26" height="14" rx="5" fill="#12141a"/><circle cx="80" cy="28" r="2" fill="#9aa3ad"/></svg>';
   }
 
   function setGuideFilter(id) {
