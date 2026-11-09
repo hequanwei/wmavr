@@ -296,6 +296,58 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
   padding-bottom: 0;
 }
 
+.fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.search {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #10130c;
+  color: var(--text);
+}
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+
+.filters button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: transparent;
+}
+
+.dir-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.dir-grid article {
+  background: var(--bg-raise);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.dir-grid h2 { font-size: 20px; margin: 0 0 8px; }
+
+.dir-grid p { margin: 0 0 8px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.tag {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 @media (max-width: 800px) {
   .layout { grid-template-columns: 1fr; }
   .result-card { position: static; }

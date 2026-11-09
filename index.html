@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WMAVR · PCVR 串流</title>
-  <meta name="description" content="查显卡编码、对照头显解码，再按家里的 Wi-Fi 估一个能用的 PCVR 串流设置。">
+  <title>wmavr</title>
+  <meta name="description" content="查这套 PCVR 怎么串，并浏览串流、WebXR、可视化和三维资产目录。">
   <link rel="canonical" href="https://wmavr.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/app.css">
@@ -13,39 +13,33 @@
   <div class="wrap">
     <header class="site-header">
       <div class="brand">
-        <a href="/">WMAVR</a>
-        <nav class="nav" aria-label="工具">
+        <a href="/">wmavr</a>
+        <nav class="nav" aria-label="栏目">
           <a href="/" aria-current="page">首页</a>
           <a href="/rig/">串流诊断</a>
-          <a href="/gpu/">显卡</a>
-          <a href="/headsets/">头显</a>
-          <a href="/wifi/">网络</a>
-          <a href="/table/">能力表</a>
+          <a href="/hardware/">硬件</a>
+          <a href="/directory/">目录</a>
         </nav>
       </div>
-      <h1>PCVR 串流</h1>
-      <p class="lede">看显卡、头显和家里的 Wi-Fi，估一个能用的编码和码率。</p>
+      <h1>wmavr</h1>
+      <p class="lede">看这套显卡和头显怎么串，也可以按用途找工具。</p>
     </header>
     <div class="cards">
       <a class="card" href="/rig/">
         <strong>串流诊断</strong>
-        <span>选好四项，看先卡在显卡、头显还是网络，以及建议的编码和码率。</span>
+        <span>选显卡、头显、Wi-Fi 和场景，看卡在哪，该用哪种编码和码率。</span>
       </a>
-      <a class="card" href="/gpu/">
-        <strong>显卡编码器</strong>
-        <span>查这张桌面卡能不能编 AV1、HEVC、H.264。</span>
+      <a class="card" href="/hardware/">
+        <strong>硬件</strong>
+        <span>同一套规则下的快速判断，外加四台头显和各代显卡能不能处理 AV1。</span>
       </a>
-      <a class="card" href="/headsets/">
-        <strong>头显对照</strong>
-        <span>Quest 3、Quest 3S、PICO 4、PICO 4 Ultra 的解码和码率上限。</span>
-      </a>
-      <a class="card" href="/wifi/">
-        <strong>网络参考</strong>
-        <span>Wi-Fi 5、6、6E 大概能撑到多少。电脑用网线或无线，数字不同。</span>
+      <a class="card" href="/directory/">
+        <strong>工具目录</strong>
+        <span>串流、WebXR、空间视频、建筑可视化和三维资产。按标签筛选。</span>
       </a>
       <a class="card" href="/table/">
         <strong>能力表</strong>
-        <span>头显解码、显卡编码和网络参考码率的整张表，附带出处。</span>
+        <span>诊断用的整张数字表和出处。</span>
       </a>
     </div>
     <p class="fine">按 90Hz 和头显默认分辨率估算。码率来自 Virtual Desktop 的公开上限，网络按经验值。不测当前网速，也不预测某一款游戏的帧率。</p>

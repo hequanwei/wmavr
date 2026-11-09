@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>工具目录 · wmavr</title>
+  <meta name="description" content="串流、WebXR、空间视频、建筑可视化和三维资产的中文目录。">
+  <link rel="canonical" href="https://wmavr.com/directory/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">wmavr</a>
+        <nav class="nav" aria-label="栏目">
+          <a href="/">首页</a>
+          <a href="/rig/">串流诊断</a>
+          <a href="/hardware/">硬件</a>
+          <a href="/directory/" aria-current="page">目录</a>
+        </nav>
+      </div>
+      <h1>工具目录</h1>
+      <p class="lede">按用途收录串流、WebXR、空间视频、建筑可视化和三维资产。每条都写它解决什么问题。</p>
+    </header>
+    <label class="field" for="q">搜索</label>
+    <input id="q" class="search" type="search" placeholder="名称、用途或标签">
+    <div id="filters" class="filters"></div>
+    <p id="count" class="fine"></p>
+    <div id="board" class="dir-grid"></div>
+    <p class="fine">目录是手工收录，不是广告位。要补充一个工具，到 <a href="https://github.com/hequanwei/wmavr/issues/new">GitHub 议题</a> 写上官网，以及它解决什么问题。</p>
+  </div>
+  <script src="../js/directory.js"></script>
+</body>
+</html>

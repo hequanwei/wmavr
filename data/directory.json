@@ -1,0 +1,194 @@
+{
+  "updated": "2026-11-09",
+  "categories": [
+    { "id": "stream", "name": "串流" },
+    { "id": "webxr", "name": "WebXR" },
+    { "id": "spatial", "name": "空间视频" },
+    { "id": "viz", "name": "建筑与可视化" },
+    { "id": "make", "name": "引擎与资产" }
+  ],
+  "tools": [
+    {
+      "name": "Virtual Desktop",
+      "url": "https://www.vrdesktop.net/",
+      "category": "stream",
+      "tags": ["无线串流", "Quest", "PICO", "AV1"],
+      "summary": "头显上的无线 PCVR 客户端。本站诊断里的码率上限，引用的是它的公开说明。"
+    },
+    {
+      "name": "Steam Link",
+      "url": "https://store.steampowered.com/app/353380/Steam_Link/",
+      "category": "stream",
+      "tags": ["无线串流", "SteamVR"],
+      "summary": "Valve 的串流客户端，可以把 SteamVR 画面送到头显。本站的码率不要直接填进它。"
+    },
+    {
+      "name": "ALVR",
+      "url": "https://github.com/alvr-org/ALVR",
+      "category": "stream",
+      "tags": ["无线串流", "开源", "Quest"],
+      "summary": "开源的无线 PCVR 串流。编码和码率按它自己的设置，不沿用 Virtual Desktop 的上限。"
+    },
+    {
+      "name": "Quest Link",
+      "url": "https://www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/",
+      "category": "stream",
+      "tags": ["Quest", "有线", "Air Link"],
+      "summary": "Meta 官方的有线和无线 Link。只适用于 Quest，码率口径和 Virtual Desktop 不是同一套。"
+    },
+    {
+      "name": "SteamVR",
+      "url": "https://store.steampowered.com/app/250820/SteamVR/",
+      "category": "stream",
+      "tags": ["SteamVR", "运行时"],
+      "summary": "PCVR 常用的运行时。头显要进 Steam 游戏时，多数串流软件最后都接到它。"
+    },
+    {
+      "name": "OpenXR Toolkit",
+      "url": "https://mbucchia.github.io/OpenXR-Toolkit/",
+      "category": "stream",
+      "tags": ["OpenXR", "帧率", "注视点渲染"],
+      "summary": "插在 OpenXR 应用上的调节层，可做注视点渲染和清晰度相关的选项。它不提高链路码率上限。"
+    },
+    {
+      "name": "Three.js",
+      "url": "https://threejs.org/",
+      "category": "webxr",
+      "tags": ["WebXR", "浏览器", "三维"],
+      "summary": "浏览器里的三维库。加上 WebXR 后，可以在头显浏览器里进沉浸场景。"
+    },
+    {
+      "name": "A-Frame",
+      "url": "https://aframe.io/",
+      "category": "webxr",
+      "tags": ["WebXR", "浏览器"],
+      "summary": "用 HTML 写 WebXR 场景的框架，适合先把一个能戴上的页面跑起来。"
+    },
+    {
+      "name": "Babylon.js",
+      "url": "https://www.babylonjs.com/",
+      "category": "webxr",
+      "tags": ["WebXR", "浏览器", "三维"],
+      "summary": "另一套浏览器三维引擎，自带 WebXR 体验和场景检查工具。"
+    },
+    {
+      "name": "PlayCanvas",
+      "url": "https://playcanvas.com/",
+      "category": "webxr",
+      "tags": ["WebXR", "浏览器", "编辑器"],
+      "summary": "在线的 WebGL / WebXR 编辑器，场景放在浏览器里编辑和发布。"
+    },
+    {
+      "name": "Wonderland Engine",
+      "url": "https://wonderlandengine.com/",
+      "category": "webxr",
+      "tags": ["WebXR", "引擎"],
+      "summary": "面向 WebXR 的引擎，用来做能在头显浏览器里打开的应用。"
+    },
+    {
+      "name": "WebXR Samples",
+      "url": "https://immersive-web.github.io/webxr-samples/",
+      "category": "webxr",
+      "tags": ["WebXR", "兼容性"],
+      "summary": "Immersive Web 工作组的示例。用来看这台头显的浏览器能不能进沉浸会话。"
+    },
+    {
+      "name": "Spatial Media Metadata Injector",
+      "url": "https://github.com/google/spatial-media",
+      "category": "spatial",
+      "tags": ["空间视频", "全景", "元数据"],
+      "summary": "Google 的球面元数据工具，给全景视频写入空间播放需要的信息。"
+    },
+    {
+      "name": "FFmpeg",
+      "url": "https://ffmpeg.org/",
+      "category": "spatial",
+      "tags": ["转码", "空间视频"],
+      "summary": "通用的音视频转码工具。转码本身不包含头显串流码率，空间视频的元数据要另外处理。"
+    },
+    {
+      "name": "Enscape",
+      "url": "https://enscape3d.com/",
+      "category": "viz",
+      "tags": ["建筑", "可视化", "VR"],
+      "summary": "建筑和室内方案的实时可视化，可以从模型和图纸进 VR 查看。"
+    },
+    {
+      "name": "Twinmotion",
+      "url": "https://www.twinmotion.com/",
+      "category": "viz",
+      "tags": ["建筑", "可视化", "VR"],
+      "summary": "Epic 的建筑可视化工具，用来做方案演示，也可以进 VR。"
+    },
+    {
+      "name": "Chaos Vantage",
+      "url": "https://www.chaos.com/vantage",
+      "category": "viz",
+      "tags": ["建筑", "可视化", "光线追踪"],
+      "summary": "Chaos 的实时光线追踪查看器，用来打开较重的可视化场景。"
+    },
+    {
+      "name": "Unity",
+      "url": "https://unity.com/",
+      "category": "viz",
+      "tags": ["引擎", "工程可视化", "VR"],
+      "summary": "实时引擎。不少培训、展项和工程可视化会用它把场景送进头显。"
+    },
+    {
+      "name": "Unreal Engine",
+      "url": "https://www.unrealengine.com/",
+      "category": "viz",
+      "tags": ["引擎", "工程可视化", "VR"],
+      "summary": "实时引擎，常用于高画质的建筑漫游和虚拟制片。"
+    },
+    {
+      "name": "Blender",
+      "url": "https://www.blender.org/",
+      "category": "make",
+      "tags": ["建模", "开源"],
+      "summary": "开源的建模和动画软件，用来做场景和资产，再交到实时引擎或查看器。"
+    },
+    {
+      "name": "Godot",
+      "url": "https://godotengine.org/",
+      "category": "make",
+      "tags": ["引擎", "开源", "OpenXR"],
+      "summary": "开源游戏引擎，可以用 OpenXR 做 VR 应用。"
+    },
+    {
+      "name": "OpenXR",
+      "url": "https://www.khronos.org/openxr/",
+      "category": "make",
+      "tags": ["标准", "运行时"],
+      "summary": "Khronos 的 XR 应用接口标准。应用按它来写，就不跟某一家头显运行时绑死。"
+    },
+    {
+      "name": "Sketchfab",
+      "url": "https://sketchfab.com/",
+      "category": "make",
+      "tags": ["资产", "模型", "在线预览"],
+      "summary": "在线的三维模型库和预览，用来找模型、看模型和分享模型。"
+    },
+    {
+      "name": "Poly Haven",
+      "url": "https://polyhaven.com/",
+      "category": "make",
+      "tags": ["资产", "贴图", "HDRI"],
+      "summary": "可免费使用的贴图、模型和 HDRI，适合搭可视化场景。"
+    },
+    {
+      "name": "ambientCG",
+      "url": "https://ambientcg.com/",
+      "category": "make",
+      "tags": ["资产", "贴图"],
+      "summary": "可免费使用的 PBR 材质库。"
+    },
+    {
+      "name": "Kenney",
+      "url": "https://kenney.nl/",
+      "category": "make",
+      "tags": ["资产", "原型"],
+      "summary": "一批可免费使用的游戏和原型资产，适合先把场景搭出来。"
+    }
+  ]
+}

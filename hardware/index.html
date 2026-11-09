@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>硬件 · wmavr</title>
+  <meta name="description" content="按显卡、头显和 Wi-Fi 看这套 PCVR 能不能串，以及各代显卡和四台头显的编码解码。">
+  <link rel="canonical" href="https://wmavr.com/hardware/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">wmavr</a>
+        <nav class="nav" aria-label="栏目">
+          <a href="/">首页</a>
+          <a href="/rig/">串流诊断</a>
+          <a href="/hardware/" aria-current="page">硬件</a>
+          <a href="/directory/">目录</a>
+        </nav>
+      </div>
+      <h1>硬件</h1>
+      <p class="lede">选显卡、头显、Wi-Fi 和场景，看这套配置卡在哪。下面的牌子只表示能不能编、能不能解，不表示现在该不该买。</p>
+    </header>
+
+    <form id="check" class="panel">
+      <div class="fields">
+        <label class="field">显卡
+          <select id="gpu" name="gpu"><option value="">选择型号</option></select>
+        </label>
+        <label class="field">头显
+          <select id="headset" name="headset"></select>
+        </label>
+        <label class="field">头显的 Wi-Fi
+          <select id="network" name="network"></select>
+        </label>
+        <label class="field">场景
+          <select id="scene" name="scene"></select>
+        </label>
+      </div>
+      <label class="check">
+        <input id="ethernet" type="checkbox" checked>
+        <span><strong>电脑用网线接到路由器</strong></span>
+      </label>
+      <div id="result" class="result tone-incomplete" aria-live="polite">
+        <h2>先选显卡和头显</h2>
+      </div>
+      <p class="fine"><a id="open-rig" href="/rig/">到串流诊断看依据</a> · <a href="/table/">能力表</a></p>
+    </form>
+
+    <section class="sheet-block">
+      <h2>头显</h2>
+      <div id="headsets" class="compare"></div>
+    </section>
+    <section class="sheet-block">
+      <h2>显卡代际</h2>
+      <div id="groups" class="compare"></div>
+    </section>
+    <p class="fine">细项在 <a href="/gpu/">显卡编码器</a>、<a href="/headsets/">头显对照</a>、<a href="/wifi/">网络参考</a>。</p>
+  </div>
+  <script src="../js/catalog.js"></script>
+  <script src="../js/diagnose.js"></script>
+  <script src="../js/hardware.js"></script>
+</body>
+</html>
