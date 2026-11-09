@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>串流诊断 · WMAVR</title>
+  <meta name="description" content="选择显卡、头显、Wi-Fi 和常玩的内容，看 PCVR 串流卡在哪，该用哪种编码。">
+  <link rel="canonical" href="https://wmavr.com/rig/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">WMAVR</a>
+        <nav class="nav" aria-label="工具">
+          <a href="/">首页</a>
+          <a href="/rig/" aria-current="page">串流诊断</a>
+          <a href="/gpu/">显卡</a>
+          <a href="/headsets/">头显</a>
+          <a href="/wifi/">网络</a>
+          <a href="/table/">能力表</a>
+        </nav>
+      </div>
+      <h1>串流诊断</h1>
+      <p class="lede">选好显卡、头显、Wi-Fi 和常玩的内容，看建议的编码和码率。</p>
+      <p class="banner">按 90Hz 和头显默认分辨率估算，不是当场测速，也不预测某一款游戏的帧率。</p>
+    </header>
+
+    <div class="layout">
+      <form id="rig-form" class="steps">
+        <fieldset class="step">
+          <legend>1 · 显卡</legend>
+          <p>能识别这台电脑的显卡时会自动选中。列表里是写明了编码器的桌面卡。</p>
+          <label class="field" for="gpu">显卡型号</label>
+          <select id="gpu" name="gpu">
+            <option value="">选择型号</option>
+          </select>
+          <p id="gpu-hint" class="hint"></p>
+          <button type="button" id="use-detected" hidden>换成识别到的型号</button>
+        </fieldset>
+
+        <fieldset class="step" id="headsets">
+          <legend>2 · 头显</legend>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend>3 · 网络</legend>
+          <p>选头显连着的 Wi-Fi。</p>
+          <div id="networks"></div>
+          <label class="check">
+            <input type="radio" name="backhaul" value="ethernet" required>
+            <span><strong>电脑用网线接到路由器</strong><small>Virtual Desktop 建议这样接。</small></span>
+          </label>
+          <label class="check">
+            <input type="radio" name="backhaul" value="wireless" required>
+            <span><strong>电脑也在用 Wi-Fi</strong><small>和头显抢同一段无线时，码率按更低一档估。</small></span>
+          </label>
+        </fieldset>
+
+        <fieldset class="step" id="scenes">
+          <legend>4 · 场景</legend>
+          <p>按你主要在玩的内容选。</p>
+        </fieldset>
+      </form>
+
+      <aside class="result-card">
+        <div id="result" class="result tone-incomplete" aria-live="polite">
+          <h2>结论还没出来</h2>
+          <p class="placeholder">选完后，这里显示卡点和建议的码率。</p>
+        </div>
+        <div class="actions">
+          <button type="button" id="copy" class="primary" disabled>复制结果</button>
+          <button type="button" id="image" disabled>保存图片</button>
+        </div>
+      </aside>
+    </div>
+
+    <section class="sources">
+      <h2>资料来源</h2>
+      <p class="fine">编码按显卡世代。码率只写 Virtual Desktop 公开过的上限。网络数字是经验值。<a href="/table/">打开完整能力表</a></p>
+      <ul id="source-list"></ul>
+    </section>
+  </div>
+  <noscript><p>请开启 JavaScript 后再使用。</p></noscript>
+  <script src="../js/catalog.js"></script>
+  <script src="../js/diagnose.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

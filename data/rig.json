@@ -1,0 +1,210 @@
+{
+  "dataDate": "2026-11-09",
+  "assumptions": {
+    "refreshHz": 90,
+    "resolution": "头显默认分辨率"
+  },
+  "disclaimer": "按公开资料和经验值估算，不是当场测速，也不预测某一款游戏的帧率。",
+  "rules": {
+    "h264HighFloorMbps": 350,
+    "efficientStarvedBelowMbps": 100,
+    "networkCapsMbps": {
+      "wifi5": { "ethernet": 150, "wireless": 80 },
+      "wifi6": { "ethernet": 200, "wireless": 120 },
+      "wifi6e": { "ethernet": 500, "wireless": 200 }
+    },
+    "networkNote": "这些码率没有实验室测量，是按 Virtual Desktop 的接法估的。电脑用网线接回路由器，头显走 5 GHz 或 6 GHz。H.264+ 到 400–500 Mbps，需要比较干净的 6 GHz。电脑如果也走 Wi-Fi，可用码率会低一截。"
+  },
+  "codecs": {
+    "av1": { "label": "AV1" },
+    "hevc": { "label": "HEVC" },
+    "h264": { "label": "H.264" }
+  },
+  "networks": [
+    {
+      "id": "wifi5",
+      "label": "Wi-Fi 5（5 GHz）",
+      "detail": "通常到不了 H.264+ 的 400 Mbps。"
+    },
+    {
+      "id": "wifi6",
+      "label": "Wi-Fi 6（5 GHz）",
+      "detail": "电脑用网线时，大致盖得住 200 Mbps，盖不住 400 Mbps 以上的 H.264+。"
+    },
+    {
+      "id": "wifi6e",
+      "label": "Wi-Fi 6E（6 GHz）",
+      "detail": "电脑用网线时，可以放到头显自己的 H.264+ 上限。"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "rhythm",
+      "label": "节奏 / 竞速",
+      "detail": "动作快，用高码率 H.264。",
+      "ideal": "h264"
+    },
+    {
+      "id": "dark",
+      "label": "暗场景",
+      "detail": "暗部多，优先 AV1。",
+      "ideal": "av1"
+    },
+    {
+      "id": "sim",
+      "label": "模拟器",
+      "detail": "能上高码率就用 H.264，否则换更省带宽的编码。",
+      "ideal": "h264"
+    }
+  ],
+  "headsets": [
+    {
+      "id": "quest3",
+      "name": "Meta Quest 3",
+      "decode": ["av1", "hevc", "h264"],
+      "maxBitrateMbps": { "av1": 200, "hevc": 200, "h264": 500 },
+      "vendor": "meta",
+      "summary": "AV1、HEVC、H.264 都能解，H.264+ 上限 500 Mbps。",
+      "note": "Virtual Desktop 在 Quest 3 上的上限：AV1 200 Mbps，HEVC 200 Mbps，H.264+ 500 Mbps。",
+      "sourceIds": ["vd-1-29", "uploadvr-500"]
+    },
+    {
+      "id": "quest3s",
+      "name": "Meta Quest 3S",
+      "decode": ["av1", "hevc", "h264"],
+      "maxBitrateMbps": { "av1": 200, "hevc": 200, "h264": null },
+      "vendor": "meta",
+      "summary": "AV1、HEVC 上限 200 Mbps。H.264 上限没有单独数字。",
+      "note": "UploadVR 把 Quest 3S 和 Quest 3、PICO 4 Ultra 都算作 XR2 Gen 2，HEVC 和 AV1 上限 200 Mbps。H.264 只提到 400 Mbps 以上的延迟优化，没有单独给出 3S 的上限，所以这里不沿用 Quest 3 的 500 Mbps。",
+      "sourceIds": ["uploadvr-xr2"]
+    },
+    {
+      "id": "pico4",
+      "name": "PICO 4",
+      "decode": ["hevc", "h264"],
+      "maxBitrateMbps": { "av1": null, "hevc": null, "h264": null },
+      "vendor": "pico",
+      "summary": "不支持 AV1，码率上限也没有公开数字。",
+      "note": "PICO 4 Ultra 的产品页写了 AV1。PICO 4 没有这条说明，Virtual Desktop 的 AV1 更新说明也没列入它，所以这里不按支持 AV1 算，也不写码率上限。",
+      "sourceIds": ["pico-ultra", "vd-1-29"]
+    },
+    {
+      "id": "pico4ultra",
+      "name": "PICO 4 Ultra",
+      "decode": ["av1", "hevc", "h264"],
+      "maxBitrateMbps": { "av1": 200, "hevc": 200, "h264": null },
+      "vendor": "pico",
+      "summary": "支持 AV1。HEVC、AV1 上限 200 Mbps，H.264 上限未知。",
+      "note": "PICO 官方写了 Ultra 的 PC 串流支持 AV1。UploadVR 把它归进 XR2 Gen 2，HEVC 和 AV1 上限 200 Mbps。H.264+ 没有单独的上限数字。",
+      "sourceIds": ["pico-ultra", "uploadvr-xr2"]
+    }
+  ],
+  "gpus": [
+    { "id": "rtx-5090", "name": "NVIDIA GeForce RTX 5090", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 50（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-5080", "name": "NVIDIA GeForce RTX 5080", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 50（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-5070ti", "name": "NVIDIA GeForce RTX 5070 Ti", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 50（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-5070", "name": "NVIDIA GeForce RTX 5070", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 50（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-5060ti", "name": "NVIDIA GeForce RTX 5060 Ti", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 50（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-4090", "name": "NVIDIA GeForce RTX 4090", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-4080s", "name": "NVIDIA GeForce RTX 4080 Super", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-4080", "name": "NVIDIA GeForce RTX 4080", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-4070tis", "name": "NVIDIA GeForce RTX 4070 Ti Super", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-4070ti", "name": "NVIDIA GeForce RTX 4070 Ti", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-4070s", "name": "NVIDIA GeForce RTX 4070 Super", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-4070", "name": "NVIDIA GeForce RTX 4070", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-4060ti", "name": "NVIDIA GeForce RTX 4060 Ti", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-4060", "name": "NVIDIA GeForce RTX 4060", "encode": ["av1", "hevc", "h264"], "group": "NVIDIA RTX 40（有 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc", "vd-1-29"] },
+    { "id": "rtx-3090ti", "name": "NVIDIA GeForce RTX 3090 Ti", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 30（无 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-3090", "name": "NVIDIA GeForce RTX 3090", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 30（无 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-3080ti", "name": "NVIDIA GeForce RTX 3080 Ti", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 30（无 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-3080", "name": "NVIDIA GeForce RTX 3080", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 30（无 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-3070ti", "name": "NVIDIA GeForce RTX 3070 Ti", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 30（无 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-3070", "name": "NVIDIA GeForce RTX 3070", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 30（无 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-3060ti", "name": "NVIDIA GeForce RTX 3060 Ti", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 30（无 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-3060", "name": "NVIDIA GeForce RTX 3060", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 30（无 AV1 编码）", "sourceIds": ["nvidia-compare", "nvidia-nvenc"] },
+    { "id": "rtx-2080ti", "name": "NVIDIA GeForce RTX 2080 Ti", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 20（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "rtx-2080s", "name": "NVIDIA GeForce RTX 2080 Super", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 20（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "rtx-2080", "name": "NVIDIA GeForce RTX 2080", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 20（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "rtx-2070s", "name": "NVIDIA GeForce RTX 2070 Super", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 20（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "rtx-2070", "name": "NVIDIA GeForce RTX 2070", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 20（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "rtx-2060s", "name": "NVIDIA GeForce RTX 2060 Super", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 20（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "rtx-2060", "name": "NVIDIA GeForce RTX 2060", "encode": ["hevc", "h264"], "group": "NVIDIA RTX 20（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1660ti", "name": "NVIDIA GeForce GTX 1660 Ti", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 16（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1660s", "name": "NVIDIA GeForce GTX 1660 Super", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 16（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1660", "name": "NVIDIA GeForce GTX 1660", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 16（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1650s", "name": "NVIDIA GeForce GTX 1650 Super", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 16（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1650", "name": "NVIDIA GeForce GTX 1650", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 16（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1080ti", "name": "NVIDIA GeForce GTX 1080 Ti", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 10（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1080", "name": "NVIDIA GeForce GTX 1080", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 10（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1070ti", "name": "NVIDIA GeForce GTX 1070 Ti", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 10（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1070", "name": "NVIDIA GeForce GTX 1070", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 10（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "gtx-1060", "name": "NVIDIA GeForce GTX 1060", "encode": ["hevc", "h264"], "group": "NVIDIA GTX 10（无 AV1 编码）", "sourceIds": ["nvidia-nvenc"] },
+    { "id": "rx-7900xtx", "name": "AMD Radeon RX 7900 XTX", "encode": ["av1", "hevc", "h264"], "group": "AMD RX 7000（有 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn", "vd-1-29"] },
+    { "id": "rx-7900xt", "name": "AMD Radeon RX 7900 XT", "encode": ["av1", "hevc", "h264"], "group": "AMD RX 7000（有 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn", "vd-1-29"] },
+    { "id": "rx-7800xt", "name": "AMD Radeon RX 7800 XT", "encode": ["av1", "hevc", "h264"], "group": "AMD RX 7000（有 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn", "vd-1-29"] },
+    { "id": "rx-7700xt", "name": "AMD Radeon RX 7700 XT", "encode": ["av1", "hevc", "h264"], "group": "AMD RX 7000（有 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn", "vd-1-29"] },
+    { "id": "rx-7600", "name": "AMD Radeon RX 7600", "encode": ["av1", "hevc", "h264"], "group": "AMD RX 7000（有 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn", "vd-1-29"] },
+    { "id": "rx-6950xt", "name": "AMD Radeon RX 6950 XT", "encode": ["hevc", "h264"], "group": "AMD RX 6000（无 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn"] },
+    { "id": "rx-6900xt", "name": "AMD Radeon RX 6900 XT", "encode": ["hevc", "h264"], "group": "AMD RX 6000（无 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn"] },
+    { "id": "rx-6800xt", "name": "AMD Radeon RX 6800 XT", "encode": ["hevc", "h264"], "group": "AMD RX 6000（无 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn"] },
+    { "id": "rx-6700xt", "name": "AMD Radeon RX 6700 XT", "encode": ["hevc", "h264"], "group": "AMD RX 6000（无 AV1 编码）", "sourceIds": ["amd-streaming", "amf-vcn"] }
+  ],
+  "sources": [
+    {
+      "id": "nvidia-compare",
+      "title": "NVIDIA GeForce 世代对比",
+      "url": "https://www.nvidia.com/en-eu/geforce/graphics-cards/compare/",
+      "grade": "厂商文档",
+      "note": "RTX 50 和 RTX 40 标明支持 AV1 编码，RTX 30 这一格是空的。"
+    },
+    {
+      "id": "nvidia-nvenc",
+      "title": "NVIDIA NVENC Application Note",
+      "url": "https://docs.nvidia.com/video-technologies/video-codec-sdk/13.0/nvenc-application-note/",
+      "grade": "厂商文档",
+      "note": "AV1 编码只有 Ada 和 Blackwell 有，Ampere、Turing、Pascal 没有。HEVC 从 Pascal 起有，H.264 这几代都有。桌面 RTX 20、30、40、50 和 GTX 10、16 按这个世代表归类，笔记本不单列。"
+    },
+    {
+      "id": "amd-streaming",
+      "title": "AMD Video and Streaming",
+      "url": "https://www.amd.com/en/products/software/adrenalin/video-streaming.html",
+      "grade": "厂商文档",
+      "note": "RDNA 3 有 AV1 编码，RDNA 2 没有。RX 7000 按 RDNA 3 算，RX 6000 按 RDNA 2 算。"
+    },
+    {
+      "id": "amf-vcn",
+      "title": "AMD AMF：VCN 编码能力",
+      "url": "https://github.com/GPUOpen-LibrariesAndSDKs/AMF/wiki/GPU-and-APU-HW-Features-and-Support",
+      "grade": "厂商文档",
+      "note": "VCN 4.0 起可以编 AV1。VCN 3.x 能编 HEVC 和 H.264，不能编 AV1。"
+    },
+    {
+      "id": "vd-1-29",
+      "title": "Virtual Desktop 1.29.0 发布说明",
+      "url": "https://github.com/guygodin/VirtualDesktop/releases/tag/v1.29.0",
+      "grade": "Virtual Desktop 说明",
+      "note": "Quest 3 增加了 AV1 和 AV1 10-bit，需要 NVIDIA 40 系或 AMD 7000 系显卡。"
+    },
+    {
+      "id": "uploadvr-500",
+      "title": "UploadVR：Quest 3 的 H.264+ 到 500 Mbps",
+      "url": "https://www.uploadvr.com/virtual-desktops-vdxr-runtime/",
+      "grade": "Virtual Desktop 说明",
+      "note": "转述 Guy Godin：Quest 3 的 H.264+ 上限 500 Mbps，此前其他头显是 400 Mbps。AV1 和 HEVC 上限都是 200 Mbps。动作快用 H.264+，其余多数情况用 AV1。"
+    },
+    {
+      "id": "uploadvr-xr2",
+      "title": "UploadVR：XR2 Gen 2 的高码率解码",
+      "url": "https://www.uploadvr.com/virtual-desktop-desk-passthrough-reduced-latency-first-class-environment/",
+      "grade": "Virtual Desktop 说明",
+      "note": "Quest 3、Quest 3S、PICO 4 Ultra 被一起列为 XR2 Gen 2。HEVC 和 AV1 上限写的是 200 Mbps。H.264 只写到 400 Mbps 以上的延迟优化，没有给 3S 和 Ultra 单独写上限。"
+    },
+    {
+      "id": "pico-ultra",
+      "title": "PICO 4 Ultra 产品页",
+      "url": "https://www.picoxr.com/products/pico4-ultra",
+      "grade": "厂商文档",
+      "note": "官方写明 PC 串流使用 AV1，并称压缩效率高于 HEVC。页面没有给出具体码率。"
+    }
+  ]
+}
