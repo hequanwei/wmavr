@@ -1,16 +1,13 @@
-# WMAVR
+# wmavr
 
-中文 PCVR 工具站。页面在浏览器里计算。部署到 Cloudflare Pages 时，构建命令留空，发布目录就是本文件夹。
+看显卡、头显和家里的 Wi-Fi，估一个能用的 PCVR 串流编码和码率。
 
-- `/` 首页
-- `/rig/` 串流诊断
-- `/gpu/` 显卡编码器
-- `/headsets/` 头显对照
-- `/wifi/` 网络参考
-- `/table/` 能力表
+- [串流诊断](https://wmavr.com/rig/)：看先卡在显卡、头显还是网络
+- [显卡编码器](https://wmavr.com/gpu/)：这张桌面卡能不能编 AV1、HEVC、H.264
+- [头显对照](https://wmavr.com/headsets/)：Quest 3、Quest 3S、PICO 4、PICO 4 Ultra
+- [网络参考](https://wmavr.com/wifi/)：Wi-Fi 5、6、6E 大概能撑到多少
+- [能力表](https://wmavr.com/table/)：上面这些数字和出处
 
-本地预览请在本目录启动 HTTP 服务，再打开对应地址。直接双击 html 时，浏览器不会加载 JSON。
+估算按 90Hz 和头显默认分辨率。码率来自 Virtual Desktop 的公开上限，网络按经验值。不测当前网速，也不预测某一款游戏的帧率。
 
-上线前先在 `pages.dev` 走一遍。要把 `wmavr.com` 指过来时，先从 GoDaddy 导出现有 DNS 记录，再改域名服务器。Cloudflare Web Analytics 在面板里打开即可。
-
-改规则只改 `data/rig.json`。
+网站：https://wmavr.com/
