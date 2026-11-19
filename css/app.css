@@ -142,6 +142,46 @@ a { color: var(--accent); }
 
 .card span { color: var(--muted); }
 
+.news-block { margin-top: 36px; }
+
+.news-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px 18px;
+}
+
+.news-head h2 { margin: 0; font-size: 22px; }
+
+.news-head p { margin: 0; color: var(--muted); }
+
+.news-list { list-style: none; margin: 8px 0 0; padding: 0; }
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.news-meta {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.news-list a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.news-list a:hover, .news-list a:focus-visible { color: var(--accent); }
+
+.news-source { margin-left: 8px; color: var(--muted); font-weight: 400; }
+
 .hint { margin: 8px 0 0; }
 
 .compare {
@@ -487,6 +527,7 @@ button.guide-card .fine { margin: 0; }
   .layout { grid-template-columns: 1fr; }
   .result-card { position: static; }
   .brand { display: block; }
+  .news-list li { grid-template-columns: 1fr; gap: 2px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
