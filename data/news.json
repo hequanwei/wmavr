@@ -1,16 +1,22 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "note": "每天从公开订阅源更新 5 条。只收一体机、手机盒子和 AR 眼镜，不含显卡。X 的读取接口不开放，所以没有接 X。",
   "items": [
     {
-      "title": "2026Q3智能眼镜销量增速放缓至14.3%,销额下滑4.3%",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1XenVRZl9TeG9Cd3JjcENwbG0wc1V1Q0xUaHRpMVptbVhrZTFfYndRdHl4VG5UZjlVOWRQU2VXWWhNc3ZSQzI1M2c5VEVjTTBFTkRhOUJkR0ZPcXlVX1lfVWFGc0E3WDdUVGFR?oc=5",
-      "source": "今日流媒体",
-      "published": "2026-11-18"
+      "title": "欧菲光回应AR眼镜技术储备 分述VR/AR三方面布局",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1UZXNJeEFTTW93b19EWUJQTTdqdlJLLUhxT2xQcmFNam10cGZ6MlhuRXROV3hITVFNcUFUamxxbHpGSlJNeHJkbnVLOGM2VU9NamlQdU1QNFJjZEpBTmp1Mkt3?oc=5",
+      "source": "观点网",
+      "published": "2026-11-19"
     },
     {
       "title": "中国智能眼镜Q3销量54.4万台 雷鸟位居AR眼镜第一",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQN2kwQlJ0N1RidGtKU2JrcDR0U2ZfaF9jY1NVMGpxLXNVbzR0Ukp3alpWTnkwM01VNy1BR185ZXd5OTlVeEpoU1BXU3lTMDFnS0pSc3UyZ3kwZENKUEMwMFRNY3Z5djVLYldVUFpuM0VqelF0UHFIWVoyWDZoYm5semRDdklwTzZR?oc=5",
+      "source": "Sohu",
+      "published": "2026-11-18"
+    },
+    {
+      "title": "Mapbox与Meta合作 为Ray-Ban Display眼镜带来免手骑行导航",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZlN0c3F1RjZ0MVVXeHFWRV8ySFNFM2ViVkFxZWFFNk5FaE10UXRnek1haHV6SGFSMi1id24wajRqUkl6YXYxVHkxUjF0aFZWOWJBajk4Vk9wQW9GMWhCcjNrQk1XaE9Vb0YweWYyenRoaDZIWUh6SDBJTUQwOWdBTmdTNHFZZVNk?oc=5",
       "source": "Sohu",
       "published": "2026-11-18"
     },
@@ -24,12 +30,6 @@
       "title": "Meta Commits $120M to Third-party Games Ahead of VR Glasses Launch",
       "url": "https://roadtovr.com/meta-commits-120m-vr-glasses-games/",
       "source": "Road to VR",
-      "published": "2026-11-17"
-    },
-    {
-      "title": "Android XR Gets Spatial Container Support To Add Volumes To 2D Apps",
-      "url": "https://www.uploadvr.com/android-xr-gets-spatial-container-support-to-enable-multi-engine-apps/",
-      "source": "UploadVR",
       "published": "2026-11-17"
     }
   ]
