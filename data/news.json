@@ -1,7 +1,19 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "note": "每天从公开订阅源更新 5 条。只收一体机、手机盒子和 AR 眼镜，不含显卡。X 的读取接口不开放，所以没有接 X。",
   "items": [
+    {
+      "title": "The 3D team behind Gravity is working on movies for Meta VR Glasses",
+      "url": "https://mixed-news.com/en/meta-vr-glasses-dneg-3d-films-hunger-games-partnership/",
+      "source": "Mixed",
+      "published": "2026-11-23"
+    },
+    {
+      "title": "XREAL撤诉，VITURE解禁，历时一年的AR眼镜专利战收官",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBkVXRycHdsXzQxeVJMYkNhR3M1YjFmWE0wSzB0S0pTbXVLRGR6VVk3Nmt6cEYyVFRIR3ZjdjRGV2xZY09rZk0ycW9ESQ?oc=5",
+      "source": "VR陀螺",
+      "published": "2026-11-22"
+    },
     {
       "title": "Meta黑五促销：Ray-Ban Meta Gen 2等智能眼镜最高降25%",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONi1od09hN280MHdqTkFyOWEtY0ZLd0tjZ0N5SEJqbFNyamNneE1SVlFxRmotNm90Q3ZnX3VRbUROLXo0YkZfaDRMVC1NSWFCQkt6NmJTQ0hwMnpLU2dYY3pYdVE2TkdKQy1qaVdlNzBBREYxYklyUVF5dFp6eTgtMmczZEl6VTUz?oc=5",
@@ -9,27 +21,15 @@
       "published": "2026-11-22"
     },
     {
-      "title": "Quest原生TV应用上线3D电影租购：150余部片库，2027年春季随VR Glasses扩至数千部",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZUViMFNKajNlTDNoYmxCbnoxUmdCRUhEamM4bTY1MEZHMUlLV3RWbUlDLU9uVDMxbzRGUHhWeWt4S0MzOTFPaGVaU1dzN2duME1QN0F4eUNZU1FmSFczNDUxT3J2ZzJBMi14VHhWQ09GNmkxbWVpLXZLelptcldBbjJ5MGdfMGVj?oc=5",
-      "source": "Sohu",
-      "published": "2026-11-22"
-    },
-    {
-      "title": "【网通社快报】兰博基尼为苹果Vision Pro应用更新Temerario Spyder可折叠硬顶展示功能",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFAxVzJqTjhpZWpGOXhlZ3FoWWdIQ3E5a0lvLVJxb2JKOWNnV0xaRVNweTJyVUpSdXZ1YS1sOFNQVFQtd2FIWEhBNG4zMFM?oc=5",
-      "source": "凤凰网",
-      "published": "2026-11-21"
-    },
-    {
-      "title": "Meta黑五促销：AI眼镜部分七五折，Quest 3S起售价296.99美元",
-      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE4xUkY5RUNteDBZVVlQZXdyVTFmdDhaZTR3NWJJcGJqdTdSc0dfVmY2NFNPbkJDdkJzejFEaEMwUWw4N2s?oc=5",
-      "source": "Nweon",
-      "published": "2026-11-21"
-    },
-    {
       "title": "Meta Slashes Smart Glasses by 25% for Black Friday, Including Ray-Ban & Oakley Frames",
       "url": "https://roadtovr.com/meta-glasses-ray-ban-black-friday-2026-sale/",
       "source": "Road to VR",
+      "published": "2026-11-20"
+    },
+    {
+      "title": "第十一届金陀螺奖 | 优质VR/AR参评项目：乐奇Rokid-Rokid Color、Rokid Glasses 2",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9HQnRaWFI0cV9LWktvbjFNYjlQZXRhNGc4SFZCVHB3QVJTRHVxWXd2MWZKRENpcktCYjBxRm1paU91MGEtT1BDTkFoQQ?oc=5",
+      "source": "VR陀螺",
       "published": "2026-11-20"
     }
   ]
