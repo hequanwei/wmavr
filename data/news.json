@@ -1,36 +1,36 @@
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-28",
   "note": "每天从公开订阅源更新 5 条。只收一体机、手机盒子和 AR 眼镜，不含显卡。X 的读取接口不开放，所以没有接 X。",
   "items": [
     {
-      "title": "映维日报：PICO Space Pro新品发布会定档12月2日",
-      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5SUEs4cTJDMHlkVkZPY3JoSTN3WGxrRGl3ZTJqdWxYWDBkVmkyejBZTTFod1V2WXNfeGJOVnRkTmdycms?oc=5",
-      "source": "Nweon",
-      "published": "2026-11-26"
-    },
-    {
-      "title": "PICO视频上新：美人独酌/吊带甜心/眼镜黑丝",
-      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5uNDkxTzZiLURpWGlRQWNHMkdDc0RzaTZnVzJhWFNwdHRvdmVnMXc2M2JXbkM1YWxHVkQyVVd4YnY0X00?oc=5",
-      "source": "Nweon",
-      "published": "2026-11-26"
-    },
-    {
-      "title": "定档12月2日，PICO Space Pro即将发布",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeVRTMHh6emhMdmNBbDBpejJJLXg1RFo1QndaeW41bXlWUFpTV0FpZEphTGx1LWNaUGZjMmpiYmdnOFJndjhfakxIUmRUcFk0QmlrTU9DeEE0Q0IxSndsMHFtLWJtcGJJQWVWS1U4S3hLMkVxY3dpTTlNR3prQ2hScEdvX3hDX3Nt?oc=5",
+      "title": "AR 眼镜关键部件发现新材料，有望薄至石英方案的 1/120 薄至石英1/120！AR眼镜关键光学部件迎来新材料突破",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPQUN6WnhDVDY0U3NLVzNta0paSlVVSFhYcGZ0dTUwTnc2cDJaYmlpcEdKZ1RmZU85ZUFQMDN3LWZOR2RtZ3lyeTJkWnRfTll2SW1hSmluX1NDd0J1U0NsYXREQ19jSDluOVlqQTNoeV9DV1oxRkIxX2ctMXc2Wkd0ZlN1NjFaNTNm?oc=5",
       "source": "Sohu",
-      "published": "2026-11-25"
+      "published": "2026-11-28"
     },
     {
-      "title": "PICO Space Pro新品发布会定档12月2日，主打空间计算赛道",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQTF2RmllOG9VX3NRbnU2WFFyUExsdi1OeTZNTW8xM2FRVHo4Vl9iVm5JRWcwU3NRX3RLWlhmc0piVkhrY2Z4U1Ezd1ZyNTFtQ0FWRFVwdG9oLXc2ckY2QXJwQmJVUTlOSTNmT19UNk9BVVo3S0c3M21DcnVRbzdVTnZETmQ1T3V1?oc=5",
-      "source": "Sohu",
-      "published": "2026-11-25"
+      "title": "韩研发现铜铝氧化物可使AR眼镜半波片减薄至1/120",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE51NzFHS3RsYTdmZndrZWprQ3FmSHhhMWtCUUJyNlNZR3dwUlAxRWFmblk3RGRRTzZhNGZkenZuNWdRQmV2OGNrYTJWUHFCbWhiUUR6NEVhWGxOS25vVHc?oc=5",
+      "source": "DoNews",
+      "published": "2026-11-28"
     },
     {
-      "title": "Meta启动黑五促销：AI眼镜最高降价25%，Quest 3S跌破300美元",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBYMkxiQWtkaTRPZ3BVbU5Zd04xV2xKUnQyeTRtXzh0a0x2d2ROWFNXQzV4VlRlQUNWRXRVRFRGcVdsaEo3bFd2R1M4QQ?oc=5",
+      "title": "AR 眼镜关键部件发现新材料，有望薄至石英方案的 1/120",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1RQWVDcTlnQUEtMm5teUY1T21WMlNOS2xqMlQ4d25kZVUyeXdNMFV4ZHVaeDVhdGVtQTRRTlpiYnVHMkxDZ2JOUGdJNmFpMjBCVVNzOEFJdVVSN2JjaFdoVi1xLVI1RVJOVlI4LVhQaEtOTFlkSFRhelRfNkF6REU?oc=5",
+      "source": "新浪财经",
+      "published": "2026-11-28"
+    },
+    {
+      "title": "VITURE XR Glasses: the ultimate companion for GTA 6 #VITURE #GTA6",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA3d0k5NklFXzNUU3V1LWRsU3VoUG1DdlMtTkdoYnFNQ0w1UEJFWmZDUl9jS210OEN6Sm40REpPTC1fWVczMmlORERWSkFkUFg4TW9vY21wWnJObXE0Q2ZZWUFDbWkyRDRFZjdUTzdJU2ZOV0E?oc=5",
+      "source": "加西网",
+      "published": "2026-11-28"
+    },
+    {
+      "title": "Snap AR眼镜SPECS开始陆续发货，新订单预计2027年初交付",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE0wZ0xVSmRLYUFHSWt5eThXd2w4ZHhVejdHWndwbC1QamZHMzU4UTNWTzRDa0hJNkxvSnVCNGdEN2JIN1ZhU1FqOGZxUQ?oc=5",
       "source": "VR陀螺",
-      "published": "2026-11-23"
+      "published": "2026-11-27"
     }
   ]
 }
